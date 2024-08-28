@@ -1,0 +1,35 @@
+Características de Node
+-----------------------
+
+* A pesar de ser un lenguaje monohilo, todas sus entradas son asíncronas.
+De esta manera se permite correr un hilo y que todas las peticiones son programadas
+para no quedar bloqueante, lo que permite tener múltiples salidas.
+
+* Corre sobre el motor V8, creado por Google.
+
+El motor V8 es un entorno de ejecución de Javascript open source, esta escrito en C++ y convierte
+el código escrito en Javascript en código máquina en lugar de interpretarlo en tiempo real.
+
+* Funciona en base a Módulos / Librerias.
+
+* Node esta orientado a Eventos
+
+EventLoop: Asincronía por diseño
+--------------------------------
+
+¿Qué es el Event Loop?
+
+Es un proceso que gestiona de forma asíncrona todos los eventos que ocurren en la aplicación.
+
+Cada evento es almacenado en una cola de eventos(Event Queue) hasta que el Event Loop lo ejecute, y
+de no poder ejecutarlo lo envía al Thread Pool que se encarga de manejar los eventos que requieren más
+tiempo de ejecución.
+
+Una de las desventajas que posee Node al ser monohilo es que al detectarse un error todo el hilo de ejecución
+es cancelado. Esto quiere decir que es muy importante la comprobanción de errores antes de la ejecución. 
+
+Variables de Entorno
+--------------------
+
+Las variables de entorno son variables que es declaran en mayúsculas por convención y son un tipo de variables dinámicas que modifican
+los procesos de ejecución.
